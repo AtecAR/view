@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ナビゲーション</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .message {
+            font-size: 18px;
+            text-align: center;
+            margin-bottom: 20px;
+            padding: 20px;
+        }
+
+        .home-button {
+            padding: 15px 30px;
+            background-color: #6c757d;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .home-button:hover {
+            background-color: #5a6268;
+        }
+    </style>
+</head>
+<body>
+    <div class="message">
+        <a>「SaveData」へ保存しました</a>
+        <a>※今回はサーバー等を介していないためダウンロードのみされます。</a>
+    </div>
+    <button class="home-button" onclick="goHome()">ホーム画面へ戻る</button>
+
+    <script>
+        function goHome() {
+            // 指定したHTMLファイルのページへ戻る
+            window.location.href = '../../index.html'; // ここで戻りたいページのファイル名を指定してください
+        }
+    </script>
+</body>
+</html>

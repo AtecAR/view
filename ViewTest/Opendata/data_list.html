@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>データ一覧</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        .container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .folder-container {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+        }
+
+        .folder {
+            width: 300px;
+            padding: 15px;
+            background-color: #007BFF;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .folder:hover {
+            background-color: #0056b3;
+        }
+
+        .download-button {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #28a745;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 24px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+
+        .download-button:hover {
+            background-color: #218838;
+        }
+
+        .back-button {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .back-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <button class="back-button" onclick="window.history.back()">戻る</button>
+    <div class="container">
+        <div>
+            <a>右の緑色のボタンを押すとマーカー画像がダウンロードされます。</a>
+        </div>
+        <div>
+            <a>今回はTestARのみ簡易なAR体験ができます。</a>
+        </div>
+        <div class="folder-container">
+            <a href="./SaveData/TestAR/index.html" class="folder">TestAR</a>
+            <a href="./SaveData/TestAR/marker.zip" class="download-button">📸</a>
+        </div>
+        <div class="folder-container">
+            <a href="./SaveData/Test1/index.html" class="folder">Test1</a>
+            <a href="./SaveData/Test1/marker.zip" class="download-button">📸</a>
+        </div>
+        <div class="folder-container">
+            <a href="./SaveData/Test2/index.html" class="folder">Test2</a>
+            <a href="./SaveData/Test2/marker.zip" class="download-button">📸</a>
+        </div>
+        <div> <h3>※今回は元々入れ込んでいるデータをリスト化しているだけです。</h3> </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IDとパスワード</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        .container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .form-group {
+            margin: 10px 0;
+        }
+
+        .label {
+            margin-right: 10px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .input {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .ok-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .ok-button:hover {
+            background-color: #0056b3;
+        }
+
+        .back-button {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .back-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <button class="back-button" onclick="window.history.back()">戻る</button>
+    <div class="container">
+        <div class="form-group">
+            <label class="label" for="id">ID:</label>
+            <input type="text" id="id" class="input">
+        </div>
+        <div class="form-group">
+            <label class="label" for="pass">Pass:</label>
+            <input type="password" id="pass" class="input">
+        </div>
+        <div>
+            <a>サンプルデータ(ダウンロードのみ)</a>
+        </div>
+        <div>
+            <a>ID:testA / Pass:A001</a>
+        </div>
+        <button class="ok-button" onclick="validateForm()">OK</button>
+    </div>
+
+    <script>
+        function validateForm() {
+            var id = document.getElementById('id').value;
+            var pass = document.getElementById('pass').value;
+
+            var fileToDownload = '';
+
+            // IDとPassに応じたファイルを指定
+            if (id === 'testA' && pass === 'A001') {
+                fileToDownload = './DataList/TestA.zip';
+            } else if (id === 'testB' && pass === 'B001') {
+                fileToDownload = './DataList/TestB.zip';
+            } else {
+                alert('IDまたはパスワードが間違っています。');
+                return;
+            }
+
+            // ダウンロード処理を行い、その後にページ遷移
+            var link = document.createElement('a');
+            link.href = fileToDownload;
+            link.download = fileToDownload.substring(fileToDownload.lastIndexOf('/') + 1);
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+
+            // ダウンロードが完了したらページ遷移
+            setTimeout(function() {
+                window.location.href = './Navigate/Navigate.html';
+            }, 1000); // ダウンロード完了を待つために1秒遅延
+        }
+    </script>
+</body>
+</html>

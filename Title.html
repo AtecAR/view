@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title Screen</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            user-select: none;
+        }
+        h1 {
+            font-size: 48px;
+            margin: 0;
+        }
+        .start-button {
+            margin-top: 20px;
+            padding: 15px 30px;
+            font-size: 20px;
+            color: white;
+            background-color: red;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .start-button:hover {
+            background-color: darkred;
+        }
+    </style>
+</head>
+<body>
+    <div id="titleScreen">
+        <h1>WebARテスト</h1>
+        <button class="start-button" onclick="startApp()">スタート</button>
+    </div>
+
+    <script>
+        function startApp() {
+            window.location.href = './ViewTest/index.html';
+        }
+    </script>
+</body>
+</html>
